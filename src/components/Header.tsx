@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 export function Header() {
@@ -9,18 +8,19 @@ export function Header() {
     <header className="fixed top-0 z-50 w-full bg-[#f1eae9]/80 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center">
-          
+          {/* Logo or branding could go here */}
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden space-x-6 md:flex"><Link to="/" className="text-[#27262c] hover:text-[#a15982]">Home</Link></nav>
-
-        {/* Contact Button */}
-        <Button
-          className="hidden bg-[#a15982] text-white hover:bg-[#a15982]/90 md:inline-flex"
-        >
-          CONNECT
-        </Button>
+        <nav className="hidden space-x-6 md:flex">
+          <Link
+            to="/"
+            onClick={() => window.location.reload()}
+            className="text-[#27262c] hover:text-[#a15982]"
+          >
+            Home
+          </Link>
+        </nav>
 
         {/* Mobile Menu Button */}
         <button
@@ -59,16 +59,13 @@ export function Header() {
       {isMenuOpen && (
         <div className="bg-[#f1eae9] p-4 md:hidden">
           <nav className="flex flex-col space-y-4">
-            
-            
-            
-            
-            
-            <Button
-              className="mt-2 w-full bg-[#a15982] text-white hover:bg-[#a15982]/90"
+            <Link
+              to="/"
+              onClick={() => window.location.reload()}
+              className="block px-4 py-2 text-[#27262c] hover:text-[#a15982]"
             >
-              CONNECT
-            </Button>
+              Home
+            </Link>
           </nav>
         </div>
       )}

@@ -18,14 +18,6 @@ export function Header() {
           {/* Other links removed */}
         </nav>
 
-        {/* CONNECT Button causing full reload */}
-        <Button
-          className="bg-[#a15982] text-white hover:bg-[#a15982]/90"
-          onClick={() => window.location.href = "/"}
-        >
-          CONNECT
-        </Button>
-
         {/* Mobile Menu Button */}
         <button
           className="p-2 md:hidden"
@@ -61,17 +53,15 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="bg-[#f1eae9] p-4 md:hidden">
+        <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 md:hidden">
           <nav className="flex flex-col space-y-4">
-            <button
-              onClick={() => {
-                setIsMenuOpen(false);
-                window.location.href = "/";
-              }}
-              className="text-[#27262c] hover:text-[#a15982]"
+            {/* Home button inside the menu */}
+            <Button
+              className="bg-[#a15982] text-white hover:bg-[#a15982]/90"
+              onClick={() => window.location.href = "/"}
             >
-              CONNECT
-            </button>
+              Home
+            </Button>
           </nav>
         </div>
       )}

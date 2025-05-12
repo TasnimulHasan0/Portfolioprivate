@@ -12,21 +12,21 @@ export function Hero() {
               Tasnimul Hasan
             </h1>
             <p className="mb-8 text-lg text-[#27262c]/70">
-              I'm a 16-year-old high school student with a passion for customizing Android. I enjoy flashing custom ROMs, tweaking settings, and writing code—whether it's practical or just for fun. My goal is to keep learning and experimenting with new ways to enhance my devices and dive deeper into tech.
+              I'm a high school student with a passion for customizing Android. I enjoy flashing custom ROMs, tweaking settings, and writing code—whether it's practical or just for fun. My goal is to keep learning and experimenting with new ways to enhance my devices and dive deeper into tech.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button
-                className="border-2 border-[#a15982] bg-[#a15982] text-white hover:bg-[#a15982]/90"
-                size="lg"
+              <a
+                href="https://github.com/TasnimulHasan0"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                View Work
-              </Button>
-              <Button
-                className="border-2 border-[#27262c] bg-transparent text-[#27262c] hover:bg-[#27262c] hover:text-white"
-                size="lg"
-              >
-                Contact Me
-              </Button>
+                <Button
+                  className="border-2 border-[#a15982] bg-[#a15982] text-white hover:bg-[#a15982]/90"
+                  size="lg"
+                >
+                  View Work
+                </Button>
+              </a>
             </div>
           </div>
 

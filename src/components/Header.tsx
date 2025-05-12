@@ -13,11 +13,6 @@ export function Header() {
           </a>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden space-x-6 md:flex">
-          {/* Other links removed */}
-        </nav>
-
         {/* Mobile Menu Button */}
         <button
           className="p-2 md:hidden"
@@ -55,13 +50,16 @@ export function Header() {
       {isMenuOpen && (
         <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 md:hidden">
           <nav className="flex flex-col space-y-4">
-            {/* Home button inside the menu with the original background */}
-            <Button
-              className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
-              onClick={() => window.location.href = "/"}
-            >
-              Home
-            </Button>
+            {/* Box inside the dropdown menu with blurred background */}
+            <div className="bg-[#F3E9E7] backdrop-blur-md p-4 rounded-md">
+              {/* Home button inside the menu */}
+              <Button
+                className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
+                onClick={() => window.location.reload()} // Full reload on click
+              >
+                Home
+              </Button>
+            </div>
           </nav>
         </div>
       )}

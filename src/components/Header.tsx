@@ -50,16 +50,13 @@ export function Header() {
       {isMenuOpen && (
         <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 md:hidden">
           <nav className="flex flex-col space-y-4">
-            {/* Box inside the dropdown menu with blurred background */}
-            <div className="bg-[#F3E9E7] backdrop-blur-md p-4 rounded-md">
-              {/* Home button inside the menu */}
-              <Button
-                className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
-                onClick={() => window.location.reload()} // Full reload on click
-              >
-                Home
-              </Button>
-            </div>
+            {/* Home button inside the menu */}
+            <Button
+              className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
+              onClick={() => window.location.reload()} // Full reload on click
+            >
+              Home
+            </Button>
           </nav>
         </div>
       )}

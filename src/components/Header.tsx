@@ -55,9 +55,9 @@ export function Header() {
       {isMenuOpen && (
         <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 md:hidden">
           <nav className="flex flex-col space-y-4">
-            {/* Home button inside the menu with the same blur effect */}
+            {/* Home button inside the menu with the original background */}
             <Button
-              className="bg-[#f1eae9]/80 backdrop-blur-md text-[#27262c] hover:bg-[#a15982] text-white w-full"
+              className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
               onClick={() => window.location.href = "/"}
             >
               Home

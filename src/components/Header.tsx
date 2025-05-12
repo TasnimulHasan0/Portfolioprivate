@@ -53,7 +53,7 @@ export function Header() {
             {/* Home button inside the menu */}
             <Button
               className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
-              onClick={() => window.location.reload()} // Full reload on click
+              onClick={() => window.location.href = "/"} // Link to homepage
             >
               Home
             </Button>

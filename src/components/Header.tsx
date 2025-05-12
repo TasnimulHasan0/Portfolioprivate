@@ -1,47 +1,65 @@
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/30 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-rose-600">Tasnimul Hasan</h1>
-
-        <div className="relative">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="bg-rose-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-rose-600 transition"
-          >
-            Home
-          </button>
-
-          {isOpen && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md backdrop-blur-md bg-white/10 shadow-lg ring-1 ring-black ring-opacity-5">
-              <div className="py-1">
-                <a
-                  href="#about"
-                  className="block px-4 py-2 text-sm text-gray-800 hover:bg-white/20"
-                >
-                  About
-                </a>
-                <a
-                  href="#projects"
-                  className="block px-4 py-2 text-sm text-gray-800 hover:bg-white/20"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#connect"
-                  className="block px-4 py-2 text-sm text-gray-800 hover:bg-white/20"
-                >
-                  Connect
-                </a>
-              </div>
-            </div>
-          )}
+    <header className="fixed top-0 z-50 w-full bg-[#f1eae9]/80 backdrop-blur-md">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <div className="flex items-center">
+          <a href="/" className="text-2xl font-bold text-[#27262c]">
+            Tasnimuls Web
+          </a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="p-2 md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-[#27262c]"
+          >
+            {isMenuOpen ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </>
+            ) : (
+              <>
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+              </>
+            )}
+          </svg>
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 md:hidden">
+          <nav className="flex flex-col space-y-4">
+            {/* Home button inside the menu */}
+            <Button
+              className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
+              onClick={() => window.location.reload()} // Full reload on click
+            >
+              Home
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

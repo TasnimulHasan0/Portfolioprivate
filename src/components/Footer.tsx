@@ -77,7 +77,7 @@ export function Footer() {
           </div>
         </div>
         <div className="text-center text-sm text-[#27262c]/70">
-          A Web Of Tasnimul Hasan.
+          A website of Tasnimul Hasan
         </div>
       </div>
     </footer>

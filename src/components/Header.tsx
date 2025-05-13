@@ -13,7 +13,7 @@ export function Header() {
           </a>
         </div>
 
-        {/* Hamburger Menu Button — always visible */}
+        {/* Menu Button (visible on both mobile and desktop) */}
         <button
           className="p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -46,17 +46,17 @@ export function Header() {
         </button>
       </div>
 
-      {/* Dropdown Menu - same for all screens */}
+      {/* Dropdown Menu (for both mobile and desktop) */}
       {isMenuOpen && (
-        <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 absolute right-4 top-16 w-48 rounded shadow-lg md:w-60">
-          <nav className="flex flex-col space-y-4">
+        <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 absolute w-full shadow-md">
+          <nav className="flex flex-col space-y-4 container mx-auto">
             <Button
               className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
-              onClick={() => window.location.reload()}
+              onClick={() => window.location.reload()} // Full reload on click
             >
               Home
             </Button>
-            {/* Add more menu items if needed */}
+            {/* Add more menu items as needed */}
           </nav>
         </div>
       )}

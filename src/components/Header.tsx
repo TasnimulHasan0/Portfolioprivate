@@ -13,9 +13,9 @@ export function Header() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Hamburger Menu Button — always visible */}
         <button
-          className="p-2 md:hidden"
+          className="p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg
@@ -46,17 +46,17 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Dropdown Menu - same for all screens */}
       {isMenuOpen && (
-        <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 md:hidden">
+        <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 absolute right-4 top-16 w-48 rounded shadow-lg md:w-60">
           <nav className="flex flex-col space-y-4">
-            {/* Home button inside the menu */}
             <Button
               className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
-              onClick={() => window.location.reload()} // Full reload on click
+              onClick={() => window.location.reload()}
             >
               Home
             </Button>
+            {/* Add more menu items if needed */}
           </nav>
         </div>
       )}

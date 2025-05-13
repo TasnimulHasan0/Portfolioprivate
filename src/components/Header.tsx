@@ -48,7 +48,14 @@ export function Header() {
 
       {/* Dropdown Menu (for both mobile and desktop) */}
       {isMenuOpen && (
-        <div className="bg-[#f1eae9]/80 backdrop-blur-md p-4 w-full">
+        <div 
+          className="p-4 w-full z-40"
+          style={{
+            backgroundColor: "rgba(241, 234, 233, 0.8)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)"
+          }}
+        >
           <nav className="flex flex-col space-y-4 container mx-auto">
             <Button
               className="bg-[#a15982] text-white hover:bg-[#a15982]/90 w-full"
